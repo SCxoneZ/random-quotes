@@ -1,0 +1,131 @@
+*{
+  font-family: arial;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  min-height: 80vh;
+  align-items: center;
+  background-color: #494949;
+}
+
+.container{
+  width: 300px;
+  height: 250px;
+  background: #fff;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.header{
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.content{
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  top: 20px;
+}
+
+.content .quote{
+  margin: 10px;
+}
+
+.content .author{
+  font-weight: bold;
+  font-size: 15px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5px;
+  margin-top: 20px;
+}
+
+.button-wrapper{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.button-wrapper button{
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 70px;
+  border: none;
+  background-color: #D1D5FF;
+  border-radius: 10px;
+  box-shadow: 0 0 4px rgba(0,0,0,.15);
+  -webkit-background-size: cover;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: .3s;
+}
+
+.button-wrapper button:hover{
+  background-color: #D1F6FF;
+}
+
+.button-wrapper .copy{
+  background-image: url(img/copy.png);
+}
+
+.button-wrapper .audio{
+  background-image: url(img/audio.png);
+}
+
+.button-wrapper .generate{
+  background-image: url(img/next.png);
+}
+
+.container::after{
+  content: '';
+  display: block;
+  background-color: #7B7B7B;
+  height: 0.5px;
+  margin-top: 20px;
+}
+
+.content .quote::before{
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background-image: url(img/quotation-mark.png);
+  background-size: cover;
+  z-index: 999999;
+  top: -10px;
+  left: 15px;
+}
+
+.content .quote::after{
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background-image: url(img/quotation-mark.png);
+  background-size: cover;
+  z-index: 999999;
+  bottom: 0;
+  top: 0;
+  top: 40px;
+  right: 15px;
+  transform: scale(-1,1);
+  margin-bottom: 10px;
+}
+
+.author::before{
+  content: '~';
+}
