@@ -2,10 +2,8 @@ const quoteArea = document.querySelector('.content .quote'),
 authorArea = document.querySelector('.content .author'),
 btnAudio = document.querySelector('.button-wrapper .audio'),
 btnNext = document.querySelector('.button-wrapper .generate'),
-btnCopy = document.querySelector('.button-wrapper .copy');
-const synth = speechSynthesis;
-
-const url = () => `https://api.quotable.io/random?maxLength=75`;
+btnCopy = document.querySelector('.button-wrapper .copy'),
+url = () => `https://api.quotable.io/random?maxLength=75`;
 
 //fetch quote when the website is loaded
 putQuote();
@@ -26,6 +24,7 @@ async function putQuote(){
 }
 
 function playAudio(){
+  const synth = speechSynthesis;
   const utterance = new SpeechSynthesisUtterance(`${quoteArea.innerHTML} by ${authorArea.innerHTML}`);
   synth.speak(utterance);
 }
