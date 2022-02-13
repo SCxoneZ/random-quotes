@@ -11,7 +11,10 @@ putQuote();
 // event listeners
 btnNext.addEventListener('click', putQuote);
 btnAudio.addEventListener('click', playAudio);
-btnCopy.addEventListener('click', () => navigator.clipboard.writeText(quoteArea.innerHTML));
+btnCopy.addEventListener('click', () => {
+  navigator.clipboard.writeText(quoteArea.innerHTML)
+  alert('Copied To The Clipboard!');
+});
 
 function getQuote(){
   return fetch(url()).then(res => res.json()).then(data => data).catch(err => err);
